@@ -1,1 +1,1 @@
-# data-science-jupyter-notebook-template
+# Jupyter Notebook Template (with Docker)
