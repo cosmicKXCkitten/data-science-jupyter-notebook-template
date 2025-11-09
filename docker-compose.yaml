@@ -1,0 +1,24 @@
+services:
+  jupyter-lab:
+    image: jupyter/scipy-notebook:latest
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:8888:8888"
+    networks:
+      jupyter-network:
+        aliases: 
+          - jupyter-lab
+    volumes:
+      - ./notebooks:/jupyter/notebooks/
+      - ./data:/jupyter/data/
+      - ./src:/jupyter/src/
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+
+networks:
+  jupyter-network:
+    name: 'jupyter-network'
+    driver: bridge
+    external: true
