@@ -1,1 +1,22 @@
+[project]
+name = 'local'
+description = 'Reusable code for DS research'
+readme = 'README.md'
+requires-python = '>=3.11'
+dynamic = ['version']
+dependencies = [
+]
+[project.optional-dependencies]
+tests = [
+    'pytest==7.4.3',
+    'pytest-cov==4.1.0',
+    'pytest_asyncio==0.21.1',
+]
 
+[build-system]
+requires = ['setuptools>=75.8.0', 'wheel']
+build-backend = 'setuptools.build_meta'
+
+[tool.setuptools.packages.find]
+where = [".", "src"]
+include = ["local"]
